@@ -1,0 +1,171 @@
+/* define variables for the primary colors */
+body {
+  background-color: #e9edc9; /* set the background color for the body element */
+  margin: 0;
+}
+
+main.user {
+  background-color: white;
+  margin: 70px 350px 0 350px;
+  padding-top: 50px;
+  height: 1100px;
+}
+main.user h1 {
+  text-align: left;
+  margin: 0 0 30px 60px;
+}
+main.user div {
+  text-align: left;
+  margin: 20px;
+}
+main.user label {
+  color: #023047;
+  margin: 34px;
+  font-family: Georgia, serif;
+  font-size: small;
+}
+main.user input {
+  margin: 10px 0 10px 34px;
+  font-family: Georgia, serif;
+  font-size: medium;
+  color: #023047;
+  background-color: #e9edc9;
+  border-style: solid;
+  border-color: white;
+  border-radius: 5px;
+  padding: 10px 15px;
+}
+main.user button {
+  margin: 10px 0 10px 40px;
+  background-color: white;
+  border-style: solid;
+  border-color: #023047;
+  border-radius: 5px;
+  padding: 10px 15px;
+}
+main.user button:hover {
+  background-color: #e9edc9;
+}
+main.user hr {
+  color: white;
+  margin-left: 34px;
+}
+
+.main-books h1 {
+  text-align: center;
+}
+.main-books section {
+  text-align: center;
+  margin-bottom: 20px;
+}
+.main-books section input {
+  font-size: 180%;
+}
+.main-books article {
+  float: left;
+  margin: 5px;
+  padding: 5px;
+  max-width: 350px;
+  border-style: solid;
+  border-width: 1px;
+}
+.main-books article img {
+  width: 100%;
+  height: auto;
+}
+.main-books article h3, .main-books article p {
+  text-align: center;
+}
+
+.ul-header {
+  list-style-type: none;
+  position: fixed;
+  top: 10px;
+  right: 10px;
+  margin: 0;
+  padding: 13px 20px 7px 20px;
+  background: #e9c46a;
+  overflow: hidden;
+  float: left;
+  border-style: solid;
+  border-radius: 2px;
+  border-width: 0 0 5px 0;
+  border-color: #ccd5ae;
+}
+.ul-header li {
+  float: left;
+}
+.ul-header li a {
+  color: #023047;
+  font-family: Georgia, serif;
+  font-size: 17px;
+  text-align: center;
+  padding: 6px 20px 15px 20px;
+  text-decoration: none;
+}
+.ul-header li a:hover {
+  background-color: #ccd5ae;
+}
+.ul-header .img-header {
+  height: 25px;
+  width: 25px;
+}
+
+.div-main {
+  width: 1910px;
+  height: 950px;
+  max-width: 2000px;
+  margin: 0 auto;
+  background-color: #ccd5ae;
+}
+.div-main .div-two {
+  padding: 120px 500px 25000px 500px;
+  text-align: center;
+}
+.div-main .h1-main {
+  color: #023047;
+  font-family: Georgia, serif;
+  font-size: 85px;
+}
+.div-main p {
+  color: #023047;
+  font-size: 30px;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 2rem;
+  margin-bottom: 4rem;
+}
+table th,
+table td {
+  padding: 1rem;
+  text-align: left;
+}
+table th {
+  background-color: #f2f2f2;
+  font-weight: normal;
+}
+table td {
+  border-bottom: 1px solid #ddd;
+}
+table tr:hover {
+  background-color: #f5f5f5;
+}
+table button {
+  background-color: white;
+  border-style: solid;
+  border-color: #023047;
+  border-radius: 5px;
+  padding: 10px 15px;
+}
+table button:hover {
+  background-color: #e9edc9;
+}
+
+h1 {
+  text-align: center;
+}
+
+/*# sourceMappingURL=style.css.map */

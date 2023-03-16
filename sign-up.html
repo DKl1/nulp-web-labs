@@ -3,8 +3,21 @@
 <head>
     <meta charset="UTF-8">
     <title>Sign up</title>
+    <link rel="stylesheet" href="style/style.css">
+    <link rel="shortcut icon" href="images/Qi.png">
 </head>
 <body>
+<header>
+    <nav>
+
+        <ul class="ul-header">
+            <li><a href="index.html"><img class="img-header" src="images/Qi_2.png" alt="main-icon"></a></li>
+            <li><a href="sign-in.html">Sign in</a></li>
+            <li><a href="sign-up.html">Sign up</a></li>
+        </ul>
+    </nav>
+</header>
+<main class="user">
     <h1>Sign Up</h1>
     <form>
         <label for="first-name">First name:</label>
@@ -22,10 +35,13 @@
         <label for="password">Password:</label>
         <input type="password" id="password">
         <br>
-        <input type="submit" value="Sign Up">
         <br>
-        <a>or</a>
-        <button type="button">Sign in</button>
+        <div>
+            <button type="button" >Sign up</button>
+            <a>or</a>
+            <button type="button" ><a href="sign-in.html">Sign in</a></button>
+        </div>
     </form>
+</main>
 </body>
 </html>

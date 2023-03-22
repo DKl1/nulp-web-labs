@@ -1,0 +1,24 @@
+{
+  "name": "nulp-web-labs",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node src/app.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/DKl1/nulp-web-labs.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/DKl1/nulp-web-labs/issues"
+  },
+  "homepage": "https://github.com/DKl1/nulp-web-labs#readme",
+  "devDependencies": {
+    "eslint": "^8.36.0"
+  }
+}

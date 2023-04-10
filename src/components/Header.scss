@@ -1,0 +1,46 @@
+$text-color: #023047;
+$background-main-color: #e9c46a;
+$background-secondary-color: #ccd5ae;
+$background-tertiary-color: #e9edc9;
+$text-color-main-color: #fefae0;
+$button-color: #2a9d8f;
+$font: Georgia, serif;
+.ul-header {
+  list-style-type: none;
+  position: fixed;
+  top: 10px;
+  right: 10px;
+  margin: 0;
+  padding: 13px 20px 7px 20px;
+  background: $background-main-color;
+  overflow: hidden;
+  float: left;
+  border-style: solid;
+  border-radius: 2px;
+  border-width: 0 0 5px 0;
+  border-color: $background-secondary-color;
+
+  li {
+    float: left;
+    a {
+      color: $text-color;
+      font-family: $font;
+      font-size: 17px;
+      text-align: center;
+      padding: 6px 20px 15px 20px;
+      text-decoration: none;
+
+      &:hover {
+        background-color:  $background-secondary-color;
+      }
+    }
+
+  }
+
+  .img-header{
+    height: 25px;
+    width: 25px;
+  }
+
+
+}

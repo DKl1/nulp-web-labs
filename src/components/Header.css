@@ -1,0 +1,35 @@
+.ul-header {
+  list-style-type: none;
+  position: fixed;
+  top: 10px;
+  right: 10px;
+  margin: 0;
+  padding: 13px 20px 7px 20px;
+  background: #e9c46a;
+  overflow: hidden;
+  float: left;
+  border-style: solid;
+  border-radius: 2px;
+  border-width: 0 0 5px 0;
+  border-color: #ccd5ae;
+}
+.ul-header li {
+  float: left;
+}
+.ul-header li a {
+  color: #023047;
+  font-family: Georgia, serif;
+  font-size: 17px;
+  text-align: center;
+  padding: 6px 20px 15px 20px;
+  text-decoration: none;
+}
+.ul-header li a:hover {
+  background-color: #ccd5ae;
+}
+.ul-header .img-header {
+  height: 25px;
+  width: 25px;
+}
+
+/*# sourceMappingURL=Header.css.map */

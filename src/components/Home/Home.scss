@@ -1,0 +1,30 @@
+$text-color: #023047;
+$background-main-color: #e9c46a;
+$background-secondary-color: #ccd5ae;
+$background-tertiary-color: #e9edc9;
+$text-color-main-color: #fefae0;
+$button-color: #2a9d8f;
+$font: Georgia, serif;
+
+
+.div-main{
+  width: 1910px;
+  height: 950px;
+  max-width: 2000px;
+  margin: 0 auto;
+  background-color: $background-secondary-color;
+
+  .div-two{
+    padding: 120px 500px 25000px 500px;
+    text-align: center;
+  }
+  .h1-main {
+    color:$text-color;
+    font-family: Georgia, serif;
+    font-size: 85px;
+  }
+  p {
+    color:$text-color;
+    font-size: 30px;
+  }
+}

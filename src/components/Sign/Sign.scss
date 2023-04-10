@@ -1,0 +1,62 @@
+$text-color: #023047;
+$background-main-color: #e9c46a;
+$background-secondary-color: #ccd5ae;
+$background-tertiary-color: #e9edc9;
+$text-color-main-color: #fefae0;
+$button-color: #2a9d8f;
+$font: Georgia, serif;
+
+@mixin button-style {
+  background-color: white;
+  border-style: solid;
+  border-color: $text-color;
+  border-radius: 5px;
+  padding: 10px 15px;
+
+  &:hover {
+    background-color: $background-tertiary-color;
+  }
+}
+.user{
+  background-color: white;
+  margin: 70px 350px 0 350px;
+  padding-top: 50px;
+  height: 1100px;
+  h1 {
+    text-align: left;
+    margin: 0 0 30px 60px;
+  }
+
+  div{
+    text-align: left;
+    margin: 20px;
+  }
+  label{
+    color: $text-color;
+    margin: 34px;
+    font-family: $font;
+    font-size: small;
+
+
+  }
+  input{
+    margin: 10px 900px 10px 34px;
+    font-family: $font;
+    font-size: medium;
+    color: $text-color;
+    background-color: $background-tertiary-color;
+    border-style: solid;
+    border-color: white;
+    border-radius: 5px;
+    padding: 10px 15px;
+  }
+  button {
+    margin: 10px 40px 10px 40px;
+    @include button-style;
+  }
+
+  hr {
+    color: white;
+    margin-left: 34px;
+  }
+}

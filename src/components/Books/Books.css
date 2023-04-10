@@ -1,0 +1,27 @@
+.main-books h1 {
+  text-align: center;
+}
+.main-books section {
+  text-align: center;
+  margin-bottom: 20px;
+}
+.main-books section input {
+  font-size: 180%;
+}
+.main-books article {
+  float: left;
+  margin: 5px;
+  padding: 5px;
+  max-width: 350px;
+  border-style: solid;
+  border-width: 1px;
+}
+.main-books article img {
+  width: 100%;
+  height: auto;
+}
+.main-books article h3, .main-books article p {
+  text-align: center;
+}
+
+/*# sourceMappingURL=Books.css.map */

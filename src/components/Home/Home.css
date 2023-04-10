@@ -1,0 +1,22 @@
+.div-main {
+  width: 1910px;
+  height: 950px;
+  max-width: 2000px;
+  margin: 0 auto;
+  background-color: #ccd5ae;
+}
+.div-main .div-two {
+  padding: 120px 500px 25000px 500px;
+  text-align: center;
+}
+.div-main .h1-main {
+  color: #023047;
+  font-family: Georgia, serif;
+  font-size: 85px;
+}
+.div-main p {
+  color: #023047;
+  font-size: 30px;
+}
+
+/*# sourceMappingURL=Home.css.map */

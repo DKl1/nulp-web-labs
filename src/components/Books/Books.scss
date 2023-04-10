@@ -1,0 +1,31 @@
+
+.main-books{
+
+  h1{
+    text-align: center;
+  }
+  section{
+    text-align: center;
+    margin-bottom: 20px;
+    input {
+      font-size: 180%;
+    }
+  }
+  article{
+    float: left;
+    margin: 5px;
+    padding: 5px;
+    max-width: 350px;
+    border-style: solid;
+    border-width: 1px;
+
+    img {
+      width: 100%;
+      height: auto;
+    }
+
+    h3, p{
+      text-align: center;
+    }
+  }
+}

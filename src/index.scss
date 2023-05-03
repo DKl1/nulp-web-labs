@@ -1,14 +1,37 @@
 $background-tertiary-color: #e9edc9;
+$text-color: #023047;
+@mixin button-style {
+  background-color: white;
+  border-style: solid;
+  border-color: $text-color;
+  border-radius: 5px;
+  padding: 10px 15px;
+
+  &:hover {
+    background-color: $background-tertiary-color;
+  }
+}
+
+button {
+  @include button-style;
+}
 
 body {
   margin: 0;
+  padding: 0;
+  height: 100%;
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
   'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
   sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   background-color: $background-tertiary-color;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
 }
+
+
 
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',

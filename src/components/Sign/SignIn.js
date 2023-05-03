@@ -1,57 +1,37 @@
-import React, {  useState } from "react";
-import { useNavigate} from "react-router-dom";
+import React, {useContext, useState} from "react";
+import {useNavigate} from "react-router-dom";
 import "./Sign.css";
-import axios from "axios";
+
+import AuthContext from "../../context/AuthContext";
+
 
 const SignIn = (props) => {
     const navigate = useNavigate();
-    const [userName, setUserName] = useState("");
+    const [email, setEmail] = useState("");
     const [password, setPassword] = useState("");
-    const [user, setUser] = useState("");
-
-    const handleUserNameChange = (event) => {
-        setUserName(event.target.value);
+    let {loginUser} = useContext(AuthContext)
+    const handleEmailChange = (event) => {
+        setEmail(event.target.value);
     };
 
     const handlePasswordChange = (event) => {
         setPassword(event.target.value);
     };
 
-    const getUser = async () => {
-        try {
-            const response = await axios.get(
-                "http://127.0.0.1:8000/api/v1/users/" + userName.toString() + "/"
-            );
-            setUser(response.data);
-        } catch (error) {
-            console.log(error);
-        }
-    };
 
-    const handleLogIn = async () => {
-        await getUser();
-        if (user.password === password) {
-            props.setHandleToken(userName);
-            props.setHandleRole(user.role);
-            navigate("/books");
-        }
-        else {
-            props.setHandleToken("");
-        }
-    };
 
     return (
         <div className="user">
             <h1>Sign In</h1>
-            <form>
-                <label htmlFor="username">Username:</label>
+            <form onSubmit={loginUser}>
+                <label htmlFor="email">Email:</label>
                 <input
-                    type="text"
-                    id="username"
-                    value={userName}
-                    onChange={handleUserNameChange}
+                    type="email"
+                    id="email"
+                    value={email}
+                    onChange={handleEmailChange}
                 />
-                <br />
+                <br/>
                 <label htmlFor="password">Password:</label>
                 <input
                     type="password"
@@ -59,17 +39,32 @@ const SignIn = (props) => {
                     value={password}
                     onChange={handlePasswordChange}
                 />
-                <br />
+                <br/>
                 <div>
-                    <button onClick={handleLogIn} type="button">
+                    <button style={{width: "22%", marginLeft: "22px"}} type="submit">
                         Sign in
                     </button>
-                    <span>or</span>
+                </div>
+                <div style={{  display: "flex", width: "22%"}}>
+                    <hr style={{width: "15%"}}/>
+                    <a>OR</a>
+                    <hr style={{width: "15%"}}/>
+                </div>
+
+                <div>
+                    <a>Forgot password?</a>
+                    <button onClick={() => navigate('/reset-password')}>Reset Password</button>
+                </div>
+                <div>
+                    <a>Don't have an account?</a>
                     <button onClick={() => navigate('/sign-up')}>Sign up</button>
                 </div>
+
             </form>
         </div>
     );
 };
 
 export default SignIn;
+
+

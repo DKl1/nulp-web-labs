@@ -1,122 +1,155 @@
-import React, { useState } from "react";
-import { useNavigate} from "react-router-dom";
+import React, {useContext, useState} from 'react';
+import {useNavigate} from "react-router-dom";
+import AuthContext from "../../context/AuthContext";
+import jwt_decode from "jwt-decode";
 import "./Sign.css";
-import axios from "axios";
+import * as Yup from 'yup';
 
-const SignUp = (props) => {
-    const navigate = useNavigate();
-    const [firstName, setFirstName] = useState("");
-    const [lastName, setLastName] = useState("");
-    const [email, setEmail] = useState("");
-    const [userName, setUserName] = useState("");
-    const [password, setPassword] = useState("");
+const SignUp = () => {
+    const [error, setError] = useState(null);
+    const [formData, setFormData] = useState({
+        email: '',
+        password: '',
+        first_name: '',
+        last_name: '',
+        middle_name: '',
+    });
 
-    const handleFirstNameChange = (event) => {
-        setFirstName(event.target.value);
+    let {setUser, setAuthTokens} = useContext(AuthContext)
+
+
+    const signUpSchema = Yup.object().shape({
+        email: Yup.string().email().required(),
+        password: Yup.string()
+            .min(8)
+            .matches(
+                /^(?=.*[A-Z])(?=.*\d).*$/,
+                "Password must contain at least one uppercase letter and one digit"
+            )
+            .required(),
+        first_name: Yup.string().required(),
+        last_name: Yup.string().required(),
+        middle_name: Yup.string().required(),
+    });
+
+
+    const handleChange = (e) => {
+        setFormData({...formData, [e.target.name]: e.target.value});
     };
+    let navigate = useNavigate()
 
-    const handleLastNameChange = (event) => {
-        setLastName(event.target.value);
-    };
 
-    const handleEmailChange = (event) => {
-        setEmail(event.target.value);
-    };
-
-    const handleUserNameChange = (event) => {
-        setUserName(event.target.value);
-    };
-
-    const handlePasswordChange = (event) => {
-        setPassword(event.target.value);
-    };
-
-    const handleSignUp = async () => {
+    const handleSignup = async (e) => {
+        e.preventDefault();
         try {
-             await axios.post(
-                "http://127.0.0.1:8000/api/v1/user/",
-                {
-                    first_name: firstName,
-                    last_name: lastName,
-                    email: email,
-                    middle_name: userName,
-                    password: password,
-                    role: 1
-                }
-            );
-            props.setHandleToken(userName);
-            props.setHandleRole(0);
-            navigate("/books");
+            await signUpSchema.validate(formData, {abortEarly: false});
         } catch (error) {
-            console.log(error);
+            // Handle validation errors
+            setError(error.errors.join(' and '));
+            return;
+        }
+        try {
+            const response = await fetch("http://127.0.0.1:8000/api/v1/signup/", {
+                method: "POST",
+                headers: {
+                    "Content-Type": "application/json",
+                },
+                body: JSON.stringify(formData),
+            });
+            const data = await response.json();
+            console.log(data);
+            if (response.ok) {
+                setAuthTokens(data);
+                setUser(jwt_decode(data.access));
+                localStorage.setItem('authTokens', JSON.stringify(data));
+                navigate('/books/');
+            } else {
+                // Handle error
+            }
+        } catch (error) {
+            // setError(error.message);
         }
     };
-
-    // const handleLogUp = async () => {
-    //     await getUser();
-    //     if (user.password === password) {
-    //         props.setHandleToken(userName);
-    //         navigate("/books");
-    //     }
-    //     else {
-    //         props.setHandleToken("");
-    //     }
-    // };
 
     return (
         <div className="user">
             <h1>Sign Up</h1>
-            <form>
+            <form onSubmit={handleSignup}>
                 <label htmlFor="first-name">First name:</label>
                 <input
                     type="text"
                     id="first-name"
-                    value={firstName}
-                    onChange={handleFirstNameChange}
+                    name="first_name"
+                    value={formData.first_name}
+                    onChange={handleChange}
                 />
-                <br />
+                <br/>
                 <label htmlFor="last-name">Last name:</label>
                 <input
-                    type="text"
                     id="last-name"
-                    value={lastName}
-                    onChange={handleLastNameChange}
+                    type="text"
+                    name="last_name"
+                    value={formData.last_name}
+                    onChange={handleChange}
                 />
-                <br />
+                <br/>
                 <label htmlFor="email">Email:</label>
                 <input
-                    type="email"
+
                     id="email"
-                    value={email}
-                    onChange={handleEmailChange}
+                    type="email"
+                    name="email"
+                    value={formData.email}
+                    onChange={handleChange}
+                    required
                 />
-                <br />
+                <br/>
                 <label htmlFor="username">Username:</label>
                 <input
-                    type="text"
                     id="username"
-                    value={userName}
-                    onChange={handleUserNameChange}
+                    type="text"
+                    name="middle_name"
+                    value={formData.middle_name}
+                    onChange={handleChange}
                 />
-                <br />
+                <br/>
                 <label htmlFor="password">Password:</label>
                 <input
                     type="password"
                     id="password"
-                    value={password}
-                    onChange={handlePasswordChange}
+                    name="password"
+                    value={formData.password}
+                    onChange={handleChange}
+                    required
                 />
-                <br />
+                <br/>
                 <div>
-                    <button onClick={handleSignUp} type="button">
+                    <button style={{width: "22%", marginLeft: "22px"}} type="submit">
                         Sign up
                     </button>
-                    <span>or</span>
-                    <button onClick={() => navigate('/sign-in')}>Sign in</button>
+                </div>
+                <div style={{display: "flex", width: "22%"}}>
+                    <hr style={{width: "15%"}}/>
+                    <a>OR</a>
+                    <hr style={{width: "15%"}}/>
+                </div>
+                <div>
+                    <a style={{marginLeft: "3%"}}>Have an account?</a>
+                    <button onClick={() => navigate('/sign-in')} type="submit">
+                        Sign in
+                    </button>
                 </div>
             </form>
+            {error && (
+                <div>
+                    <p>Error:</p>
+                    <pre>{JSON.stringify(error, null, 2)}</pre>
+                </div>
+            )}
+
         </div>
     );
+
 };
 
 export default SignUp;

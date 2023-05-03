@@ -1,0 +1,11 @@
+.div-cont {
+  text-align: left;
+  display: flex;
+  flex-direction: row;
+}
+
+.div-inner {
+  margin: 0 30px 0 5px;
+}
+
+/*# sourceMappingURL=Footer.css.map */

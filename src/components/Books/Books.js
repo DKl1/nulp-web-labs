@@ -7,11 +7,7 @@ import BookList from "./BookList";
 
      return (
          <div id="books-articles" className="main-books">
-             <h1>Books in the Quill</h1>
-             <section>
-                 <input type="text" placeholder="book name"/>
-
-             </section>
+             {/*<h1>Books in the Quill</h1>*/}
              <BookList/>
          </div>
 

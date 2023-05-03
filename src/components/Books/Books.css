@@ -1,5 +1,27 @@
-.main-books h1 {
+:root {
+  --text-color: #023047;
+  --background-main-color: #e9c46a;
+  --background-secondary-color: #ccd5ae;
+  --background-tertiary-color: #e9edc9;
+  --text-color-main-color: #fefae0;
+  --button-color: #2a9d8f;
+}
+
+.main-books {
   text-align: center;
+  padding-top: 5em;
+}
+.main-books .books-inner {
+  margin: 1em 8% 3em 8%;
+  padding: 0;
+  text-align: center;
+}
+.main-books h1 {
+  text-align: left;
+  margin: 20px 0 0 5em;
+}
+.main-books hr {
+  margin: 0.5em 0.7em 2em 10em;
 }
 .main-books section {
   text-align: center;
@@ -10,18 +32,80 @@
 }
 .main-books article {
   float: left;
-  margin: 5px;
-  padding: 5px;
-  max-width: 350px;
+  margin: 15px;
+  padding: 10px;
+  width: 350px;
+  height: 330px;
   border-style: solid;
   border-width: 1px;
 }
 .main-books article img {
-  width: 100%;
+  width: 95%;
   height: auto;
+  padding: 3px 9px;
 }
-.main-books article h3, .main-books article p {
+.main-books article h3,
+.main-books article p {
   text-align: center;
+}
+.main-books article p {
+  margin: 0 0 10px 0;
+}
+.main-books article h3 {
+  margin: 5px 0 10px 0;
+}
+.main-books article:hover {
+  background-color: white;
+  font-size: 20px;
+  transform: scale(1.02);
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.4);
+}
+.main-books form {
+  text-align: center;
+  background-color: white;
+  margin: 10px 10em 2em 10em;
+  border-radius: 15px;
+  padding: 10px;
+}
+.main-books form label {
+  color: var(--text-color);
+  margin: 34px;
+  font-family: "Georgia", serif;
+  font-size: small;
+}
+.main-books form input {
+  margin: 10px 90px 10px 34px;
+  font-family: "Georgia", serif;
+  font-size: small;
+  border-color: var(--background-tertiary-color);
+  background-color: white;
+  border-style: solid;
+  border-width: 3px;
+  border-radius: 5px;
+  padding: 10px 15px;
+}
+.main-books input[type=text]:focus {
+  outline: none;
+  background-color: var(--background-tertiary-color);
+}
+.main-books .red-background {
+  background-color: red;
+}
+.main-books .green-background {
+  background-color: green;
+}
+@media (max-width: 768px) {
+  .main-books article {
+    width: 100%;
+    height: auto;
+    margin: 15px 0;
+  }
+  .main-books form {
+    margin: 10px 1em 2em 1em;
+  }
+  .main-books form input {
+    margin: 10px 0;
+  }
 }
 
 /*# sourceMappingURL=Books.css.map */

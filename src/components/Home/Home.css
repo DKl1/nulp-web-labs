@@ -1,12 +1,11 @@
 .div-main {
-  width: 1910px;
+  width: 100%;
   height: 950px;
-  max-width: 2000px;
   margin: 0 auto;
   background-color: #ccd5ae;
 }
 .div-main .div-two {
-  padding: 120px 500px 25000px 500px;
+  padding: 120px 550px;
   text-align: center;
 }
 .div-main .h1-main {
@@ -17,6 +16,29 @@
 .div-main p {
   color: #023047;
   font-size: 30px;
+}
+
+.div-news {
+  padding: 120px 500px 0 500px;
+  text-align: center;
+}
+.div-news .news-item {
+  margin-bottom: 40px;
+  padding: 20px;
+  background-color: #e9edc9;
+}
+.div-news .news-item h3 {
+  margin-bottom: 10px;
+  font-size: 24px;
+  font-weight: bold;
+}
+.div-news .news-item .news-date {
+  margin-bottom: 10px;
+  font-size: 16px;
+  font-style: italic;
+}
+.div-news .news-item p {
+  font-size: 16px;
 }
 
 /*# sourceMappingURL=Home.css.map */

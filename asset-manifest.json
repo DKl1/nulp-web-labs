@@ -1,16 +1,16 @@
 {
   "files": {
-    "main.css": "/nulp-web-labs/static/css/main.9e276413.css",
-    "main.js": "/nulp-web-labs/static/js/main.b9667d67.js",
+    "main.css": "/nulp-web-labs/static/css/main.d9f28610.css",
+    "main.js": "/nulp-web-labs/static/js/main.674a16c3.js",
     "static/js/787.257f42f8.chunk.js": "/nulp-web-labs/static/js/787.257f42f8.chunk.js",
     "static/media/header_logo.png": "/nulp-web-labs/static/media/header_logo.994616cdf48dc17b9b04.png",
     "index.html": "/nulp-web-labs/index.html",
-    "main.9e276413.css.map": "/nulp-web-labs/static/css/main.9e276413.css.map",
-    "main.b9667d67.js.map": "/nulp-web-labs/static/js/main.b9667d67.js.map",
+    "main.d9f28610.css.map": "/nulp-web-labs/static/css/main.d9f28610.css.map",
+    "main.674a16c3.js.map": "/nulp-web-labs/static/js/main.674a16c3.js.map",
     "787.257f42f8.chunk.js.map": "/nulp-web-labs/static/js/787.257f42f8.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.9e276413.css",
-    "static/js/main.b9667d67.js"
+    "static/css/main.d9f28610.css",
+    "static/js/main.674a16c3.js"
   ]
 }

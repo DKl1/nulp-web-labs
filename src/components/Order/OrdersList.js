@@ -4,7 +4,7 @@ import './Orders.css'
 import axios from "axios";
 import AuthContext from "../../context/AuthContext";
 
-const OrderList = (props) => {
+const OrderList = () => {
     const location = useLocation();
     const title = location.state.title;
     const userEmail = location.state.userEmail;
@@ -12,8 +12,7 @@ const OrderList = (props) => {
     const waiting_title = 'orders waiting to be prepared';
     const prepared_title = 'prepared orders';
     const received_title = 'orders you have received';
-    const returned_title = 'orders you have returned'
-    const [disabledButtonIds, setDisabledButtonIds] = useState([]);
+
     let {authTokens, user} = useContext(AuthContext)
 
 
@@ -54,7 +53,6 @@ const OrderList = (props) => {
                 <td>{order.end_at || 'no data'}</td>
                 <td>
                     {user.role === 1 && field !== null ? <button
-                        // disabled={disabledButtonIds.includes(order.id)}
                         onClick={() => handleChange(order.id, order.book)}>
                         {buttonName}
                     </button> : null}

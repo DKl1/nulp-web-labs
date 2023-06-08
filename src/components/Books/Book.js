@@ -32,6 +32,7 @@ const Book = () => {
 
 // Add the book ID to the order object
         orderList.books.push({bookId: book.id, bookName: book.name});
+        console.log(orderList);
 
 
         localStorage.setItem('orderList', JSON.stringify(orderList));
@@ -46,7 +47,7 @@ const Book = () => {
             <h1>{book.name}</h1>
             <img src={book.image} alt={book.name}/>
             <p>{book.description}</p>
-            <button onClick={handleAddToOrder}>add to order</button>
+            <button name={"add to order"} onClick={handleAddToOrder}>add to order</button>
         </div>
     );
 };

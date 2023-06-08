@@ -1,4 +1,4 @@
-import {createContext, useEffect, useState,} from 'react'
+import {createContext, useCallback, useEffect, useState,} from 'react'
 import jwt_decode from "jwt-decode";
 import {useNavigate} from 'react-router-dom';
 import axios from "axios";
@@ -45,8 +45,8 @@ export const AuthProvider = ({children}) => {
     }
 
 
-    let updateToken = async () => {
-
+    const updateToken = useCallback(async () => {
+        if (authTokens) {
         let response = await fetch('http://127.0.0.1:8000/api/v1/token/refresh/', {
             method: 'POST',
             headers: {
@@ -63,12 +63,12 @@ export const AuthProvider = ({children}) => {
             localStorage.setItem('authTokens', JSON.stringify(data))
         } else {
             logoutUser()
-        }
+        }}
 
         if (loading) {
             setLoading(false)
         }
-    }
+    }, [authTokens, loading]);
     const resetPassword = async (email) => {
         const config = {
             headers: {
@@ -140,7 +140,7 @@ export const AuthProvider = ({children}) => {
         setLoading(false)
         return () => clearInterval(interval)
 
-    }, [authTokens, loading])
+    }, [authTokens, loading, updateToken])
 
     return (
         <AuthContext.Provider value={contextData}>

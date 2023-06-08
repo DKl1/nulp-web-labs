@@ -43,7 +43,7 @@ const User = () => {
                 <p>User Last Name: {user.last_name}</p>
                 <p>User Name: {user.middle_name}</p>
                 <p>Email: {user.email}</p>
-                <p>Role: {user.role === 1 ? <a>librarian</a> : <a>reader</a>}</p>
+                <p>Role: {user.role === 1 ? <span>librarian</span> : <span>reader</span>}</p>
                 <p>Created at: {user.created_at}</p>
                 <p>Last Login at: {user.last_login}</p>
                 <p>Updated at: {user.updated_at}</p>

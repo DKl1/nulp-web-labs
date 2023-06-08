@@ -1,7 +1,6 @@
 import React, {useContext, useEffect, useState} from 'react';
 import axios from 'axios';
 import CardOrder from "./CardOrder";
-import OrderList from "./OrdersList";
 import {useNavigate} from "react-router-dom";
 import './Orders.css'
 import AuthContext from "../../context/AuthContext";
@@ -27,7 +26,7 @@ const Orders = () => {
             .then(response => {
 
                 if (user.role.toString() === '0') {
-                    setOrderList(response.data.reverse().filter(order => order.user.toString() === user.user_id.toString()))
+                    setOrderList(response.data.reverse().filter(order => order.user.toString() === user['user_id'].toString()))
                 }
                 else{
                     setOrderList(response.data.reverse())
@@ -36,7 +35,7 @@ const Orders = () => {
             .catch(error => {
                 console.log(error);
             });
-    }, []);
+    }, [user]);
 
     useEffect(() => {
         const fetchUserEmail = async () => {
@@ -49,12 +48,12 @@ const Orders = () => {
         };
         fetchUserEmail();
     }, [orderList]);
-    // console.log(orderList);
+
     useEffect(() => {
-        const waiting_to_be_prepare_orders = orderList.filter(order => !order.is_prepared_at && order.created_at && order.user.toString() === user.user_id.toString());
+        const waiting_to_be_prepare_orders = orderList.filter(order => !order.is_prepared_at && order.created_at && order.user.toString() === user['user_id'].toString());
         setWaitingToBePrepare(waiting_to_be_prepare_orders);
 
-    }, [orderList]);
+    }, [orderList, user]);
     useEffect(() => {
         const prepared_orders = orderList.filter(order => !order.received_by_user_at && order.is_prepared_at);
         setPreparedOrders(prepared_orders);
@@ -67,10 +66,10 @@ const Orders = () => {
 
     }, [orderList]);
     useEffect(() => {
-        const returned_orders = orderList.filter(order => order.end_at && order.user === user.user_id);
+        const returned_orders = orderList.filter(order => order.end_at && order.user === user['user_id']);
         setReturnedOrders(returned_orders)
 
-    }, [orderList]);
+    }, [orderList, user]);
 
     const handleOrdersClick = ({title, userEmail, orders}) => {
         navigate(`/orders-list/`, {

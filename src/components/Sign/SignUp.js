@@ -130,11 +130,11 @@ const SignUp = () => {
                 </div>
                 <div style={{display: "flex", width: "22%"}}>
                     <hr style={{width: "15%"}}/>
-                    <a>OR</a>
+                    <span>OR</span>
                     <hr style={{width: "15%"}}/>
                 </div>
                 <div>
-                    <a style={{marginLeft: "3%"}}>Have an account?</a>
+                    <span style={{marginLeft: "3%"}}>Have an account?</span>
                     <button onClick={() => navigate('/sign-in')} type="submit">
                         Sign in
                     </button>

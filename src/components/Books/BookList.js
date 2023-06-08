@@ -19,7 +19,7 @@ const BookList = () => {
                 setBookList(response.data);
             })
             .catch(error => {
-                console.log(error);
+                console.error(error);
             });
     }, []);
 
@@ -40,7 +40,7 @@ const BookList = () => {
     }
 
     return (
-        <div>
+        <div id="books-articles" className="main-books">
             <form>
                 <input placeholder="name of the book" type="text" id="name" name="name" value={filter.name} onChange={handleFilterChange} />
                 <input placeholder="author of the book" type="text" id="author" name="author" value={filter.author} onChange={handleFilterChange} />

@@ -40,14 +40,14 @@ const ResetPasswordConfirm = () => {
             setError(err.errors.join(' and '));
             return;
         }
-
+        if (typeof resetPasswordConfirm === 'function') {
         resetPasswordConfirm(uid, token, new_password, re_new_password)
             .then(() => {
                 navigate('/sign-in');
             })
             .catch((error) => {
                 setError(error.message);
-            });
+            });}
     };
 
     return (
@@ -66,7 +66,7 @@ const ResetPasswordConfirm = () => {
                 <input
                     className='form-control'
                     type='password'
-                    placeholder='Confirm New Password'
+                    placeholder='Confirm Password'
                     name='re_new_password'
                     value={re_new_password}
                     onChange={(e) => onChange(e)}
@@ -78,7 +78,7 @@ const ResetPasswordConfirm = () => {
                 </button>
             </form>
             {error && (
-                <div>
+                <div role="alert" aria-label="Error:">
                     <p>Error:</p>
                     <pre>{JSON.stringify(error, null, 2)}</pre>
                 </div>

@@ -8,7 +8,6 @@ function User(props) {
 
     const [firstName, setFirstName] = useState('');
     const [lastName, setLastName] = useState('');
-    const [password, setPassword] = useState('');
     const [middleName, setMiddleName] = useState('');
     const [email, setEmail] = useState('');
     const [role, setRole] = useState('');
@@ -40,7 +39,6 @@ function User(props) {
         axios.put(`http://127.0.0.1:8000/api/v1/user/${user.user_id}/`, {
             first_name: firstName,
             last_name: lastName,
-            // password: password,
             middle_name: middleName,
             email: email,
             role: role
@@ -52,11 +50,10 @@ function User(props) {
     };
 
     useEffect(() => {
-        axios.get(`http://127.0.0.1:8000/api/v1/user/${user.user_id}/`)
+        axios.get(`http://127.0.0.1:8000/api/v1/user/${user['user_id']}/`)
             .then(response => {
                 setFirstName(response.data.first_name);
                 setLastName(response.data.last_name);
-                // setPassword(response.data.password);
                 setMiddleName(response.data.middle_name);
                 setEmail(response.data.email);
                 setRole(response.data.role);
@@ -64,7 +61,7 @@ function User(props) {
             .catch(error => {
                 console.log(error);
             });
-    }, []);
+    }, [user]);
 
     return (
         <div>
@@ -75,13 +72,9 @@ function User(props) {
                     <label htmlFor="fname">First name:</label><br/>
                     <input type="text" id="fname" value={firstName} onChange={e => setFirstName(e.target.value)}/><br/>
                     <hr/>
-                    <label htmlFor="lname">Name:</label><br/>
+                    <label htmlFor="lname">Last name:</label><br/>
                     <input type="text" id="lname" value={lastName} onChange={e => setLastName(e.target.value)}/><br/>
                     <hr/>
-                    {/*<label htmlFor="password">Password:</label><br/>*/}
-                    {/*<input type="password" id="password" value={password}*/}
-                    {/*       onChange={e => setPassword(e.target.value)}/><br/>*/}
-                    {/*<hr/>*/}
                     <label htmlFor="uname">User name:</label><br/>
                     <input type="text" id="uname" value={middleName}
                            onChange={e => setMiddleName(e.target.value)}/><br/>
@@ -90,7 +83,7 @@ function User(props) {
                     <input type="email" id="email" value={email} onChange={e => setEmail(e.target.value)}/><br/>
                     <hr/>
                     <label htmlFor="role">Role:</label><br/>
-                    <input type="text" id="role" disabled value={role === 1 ? 'libtatian' : 'reader'}
+                    <input type="text" id="role" disabled value={role === 1 ? 'librarian' : 'reader'}
                            onChange={e => setRole(e.target.value)}/><br/>
 
                     <hr/>

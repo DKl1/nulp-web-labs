@@ -48,7 +48,7 @@ const CardOrder = (props) => {
                 <div>
                     {
                         orderList?.books.map(book => (
-                            <div className='order-book'>
+                            <div key={book.bookId} className='order-book'>
                                 <p>{book.bookName}</p>
                                 <button onClick={() => handleDeleteBook(book.bookId)}>delete book</button>
 

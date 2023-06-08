@@ -47,16 +47,16 @@ const SignIn = (props) => {
                 </div>
                 <div style={{  display: "flex", width: "22%"}}>
                     <hr style={{width: "15%"}}/>
-                    <a>OR</a>
+                    <span>OR</span>
                     <hr style={{width: "15%"}}/>
                 </div>
 
                 <div>
-                    <a>Forgot password?</a>
+                    <span>Forgot password?</span>
                     <button onClick={() => navigate('/reset-password')}>Reset Password</button>
                 </div>
                 <div>
-                    <a>Don't have an account?</a>
+                    <span>Don't have an account?</span>
                     <button onClick={() => navigate('/sign-up')}>Sign up</button>
                 </div>
 

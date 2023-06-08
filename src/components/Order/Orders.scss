@@ -1,0 +1,83 @@
+$main-font: 'Georgia', serif;
+
+
+$text-color: #023047;
+$background-main-color: #e9c46a;
+$background-secondary-color: #ccd5ae;
+$background-tertiary-color: #e9edc9;
+$text-color-main-color: #fefae0;
+$button-color: #2a9d8f;
+
+.ordersArticle {
+  text-align: center;
+  padding: 0 10em;
+
+  .div-card {
+    background-color: white;
+    border-radius: 10px;
+    border-width: 2px;
+    border-style: solid;
+    margin: 5em 6em;
+    text-align: center;
+    width: 85%;
+
+
+    h2 {
+      text-align: left;
+      margin-top: 0.5em;
+      margin-left: 1em;
+    }
+
+
+    .button-submit {
+      margin: 0.5em;
+      padding: 0.5em;
+
+    }
+
+    .order-book {
+      border-bottom-style: solid;
+      border-top-style: solid;
+      border-width: 2px;
+      padding: 1em;
+      background-color: $background-secondary-color;
+      margin-top:1%;
+
+      p {
+        float: left;
+        text-align: left;
+        margin: 1em;
+        width: 50%;
+
+      }
+
+      button {
+        margin-right: 5em;
+        padding: 0.5em;
+      }
+    }
+  }
+
+  .div-orders-list {
+    //background-color: ;
+    float: left;
+    border-radius: 10px;
+    border-width: 2px;
+    border-style: solid;
+    margin: 5em 4em;
+    text-align: center;
+    width: 40em;
+    height: 15em;
+
+    h2 {
+      text-align: center;
+      margin-top: 4em;
+    }
+
+    &:hover {
+      background-color: $background-secondary-color;
+    }
+  }
+
+
+}

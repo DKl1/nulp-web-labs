@@ -1,0 +1,59 @@
+.ordersArticle {
+  text-align: center;
+  padding: 0 10em;
+}
+.ordersArticle .div-card {
+  background-color: white;
+  border-radius: 10px;
+  border-width: 2px;
+  border-style: solid;
+  margin: 5em 6em;
+  text-align: center;
+  width: 85%;
+}
+.ordersArticle .div-card h2 {
+  text-align: left;
+  margin-top: 0.5em;
+  margin-left: 1em;
+}
+.ordersArticle .div-card .button-submit {
+  margin: 0.5em;
+  padding: 0.5em;
+}
+.ordersArticle .div-card .order-book {
+  border-bottom-style: solid;
+  border-top-style: solid;
+  border-width: 2px;
+  padding: 1em;
+  background-color: #ccd5ae;
+  margin-top: 1%;
+}
+.ordersArticle .div-card .order-book p {
+  float: left;
+  text-align: left;
+  margin: 1em;
+  width: 50%;
+}
+.ordersArticle .div-card .order-book button {
+  margin-right: 5em;
+  padding: 0.5em;
+}
+.ordersArticle .div-orders-list {
+  float: left;
+  border-radius: 10px;
+  border-width: 2px;
+  border-style: solid;
+  margin: 5em 4em;
+  text-align: center;
+  width: 40em;
+  height: 15em;
+}
+.ordersArticle .div-orders-list h2 {
+  text-align: center;
+  margin-top: 4em;
+}
+.ordersArticle .div-orders-list:hover {
+  background-color: #ccd5ae;
+}
+
+/*# sourceMappingURL=Orders.css.map */
